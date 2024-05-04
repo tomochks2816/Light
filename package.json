@@ -52,8 +52,8 @@
     "branch": "main",
     "tag": "",
     "sha": "",
-    "build_command": "npm install",
-    "run_command": "npm start",
+    "build_command": "",
+    "run_command": "",
     "no_deploy_on_push": false,
     "workdir": "",
     "buildpack": {
