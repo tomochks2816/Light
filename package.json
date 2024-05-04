@@ -1,24 +1,66 @@
 {
-  "name": "lightproxy",
-  "version": "1.0.0",
-  "type": "module",
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=16.0.0"
-  },
-  "scripts": {
-    "start": "node index.js"
-  },
-  "author": "Stella, Lucid, & Amplify",
-  "license": "GPL-3.0-or-later",
-  "dependencies": {
-    "@nebula-services/dynamic": "^0.7.2-patch.2",
-    "@tomphttp/bare-server-node": "2.0.3",
-    "cors": "^2.8.5",
-    "chalk": "^5.2.0",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "prettier": "3.2.1"
-  }
+  "name": "light",
+  "type": "WEB",
+  "routes": [
+    {
+      "port": 8000,
+      "path": "/"
+    }
+  ],
+  "ports": [
+    {
+      "port": 8000,
+      "protocol": "http"
+    }
+  ],
+  "env": [],
+  "regions": [
+    "fra"
+  ],
+  "scalings": [
+    {
+      "scopes": [
+        "region:fra"
+      ],
+      "min": 1,
+      "max": 1,
+      "targets": []
+    }
+  ],
+  "instance_types": [
+    {
+      "scopes": [
+        "region:fra"
+      ],
+      "type": "free"
+    }
+  ],
+  "health_checks": [
+    {
+      "grace_period": 5,
+      "interval": 30,
+      "restart_limit": 3,
+      "timeout": 5,
+      "tcp": {
+        "port": 8000
+      }
+    }
+  ],
+  "skip_cache": false,
+  "git": {
+    "repository": "github.com/NightProxy/Light",
+    "branch": "main",
+    "tag": "",
+    "sha": "",
+    "build_command": "npm install",
+    "run_command": "npm start",
+    "no_deploy_on_push": false,
+    "workdir": "",
+    "buildpack": {
+      "build_command": "npm install",
+      "run_command": "npm start",
+      "privileged": false
+    }
+  }
 }
+
