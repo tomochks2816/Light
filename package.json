@@ -57,8 +57,8 @@
     "no_deploy_on_push": false,
     "workdir": "",
     "buildpack": {
-      "build_command": "npm install",
-      "run_command": "npm start",
+      "build_command": "",
+      "run_command": "",
       "privileged": false
     }
   }
